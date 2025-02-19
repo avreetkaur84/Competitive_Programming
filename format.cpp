@@ -8,6 +8,8 @@ void solve() {
     
 }
 
+
+
 int main()
 {
     int t;

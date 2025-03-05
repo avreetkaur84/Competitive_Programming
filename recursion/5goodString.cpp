@@ -13,8 +13,8 @@ class Solution {
               return;
           }
           
-          string op1 = op;
-          string op2 = op+ip[0];
+          string op1 = op;     //non-pick
+          string op2 = op+ip[0];   //pick
           
           if(!ip.empty()) ip.erase(ip.begin());
           

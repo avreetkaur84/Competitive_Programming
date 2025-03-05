@@ -5,7 +5,7 @@
 using namespace std;
 
 // In memoization, we store the result of recursion in an array, and then directly use that result whenever required.
-// In tabulation, we don't use recursion, but only array, where we start solving the prooblem by starting from base, getting the answer and then solving the main problem.
+// In tabulation, we don't use recursion, but only array, where we start solving the problem by starting from base, getting the answer and then solving the main problem.
 
 class Solution {
     public:

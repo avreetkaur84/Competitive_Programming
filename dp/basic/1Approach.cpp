@@ -16,7 +16,7 @@ class Solution {
           
           if(dp[n]!=-1)   return dp[n];
           
-          dp[n]=(memoization(n-1, dp)+memoization(n-2, dp))%M;
+          dp[n]=(memoization(n-1, dp)+memoization(n-2, dp))%M; 
           // cout<<"n :"<<n<<"   , dp[n]: "<<dp[n]<<endl;
           return dp[n];
       }

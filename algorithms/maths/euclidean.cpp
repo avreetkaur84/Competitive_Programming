@@ -10,14 +10,14 @@ int euclidean(int a, int b) {
     if(b==0)    return a;
     if(b>a) swap(a, b);
 
-    return (b, a%b);
+    return euclidean(b, a%b);
 }
 
 
 
 int main()
 {
-    int a, b;   
+    int a=7, b=14;   
     // cin>>a>>b;
     int res = euclidean(a, b);
     cout<<res<<endl;

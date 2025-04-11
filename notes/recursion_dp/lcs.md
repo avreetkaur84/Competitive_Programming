@@ -102,11 +102,54 @@ int lcs(string &x, string &y, int m, int n) {
 
 ---
 
+## 📘 Tabulation Approach (Bottom-Up DP)
+
+### 🧠 Concept:
+
+Instead of solving top-down like recursion, we solve from the smallest subproblems up.
+
+We create a 2D `dp` table of size `(m+1) x (n+1)` where:
+- `dp[i][j]` = LCS length for the first `i` characters of `x` and first `j` characters of `y`.
+
+### ✅ Initialization:
+
+```cpp
+// All dp[i][0] and dp[0][j] = 0
+// Because LCS with an empty string is always 0
+```
+
+### 🔄 Transition:
+
+```cpp
+for (int i = 1; i <= m; i++) {
+    for (int j = 1; j <= n; j++) {
+        if (x[i-1] == y[j-1]) {
+            dp[i][j] = 1 + dp[i-1][j-1]; // ↖️ Diagonal (match)
+        } else {
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1]); // ↑ or ← (skip one)
+        }
+    }
+}
+```
+
+### ✅ Final Answer:
+```cpp
+return dp[m][n]; // Bottom-right of the matrix
+```
+
+
+### 🧠 Diagonal Move Explanation:
+
+- `dp[i-1][j-1]` is the LCS length **before** matching characters `x[i-1]` and `y[j-1]`.
+- We add `1` because we’re including this **new matching character** into the LCS.
+
+---
+
 ## 📘 Suggested Practice Flow
 
-1. ✅ Write pure recursion for LCS
-2. ♻️ Convert it to Memoization with `dp[m][n]`
-3. 📆 Convert it to Bottom-Up (Tabulation)
+1. ✅ Write pure recursion for LCS  
+2. ♻️ Convert it to Memoization with `dp[m][n]`  
+3. 📆 Convert it to Bottom-Up (Tabulation) ← ✅ Done above  
 4. 🧠 Do space optimization (1D arrays) if you want to master DP
 
 ---

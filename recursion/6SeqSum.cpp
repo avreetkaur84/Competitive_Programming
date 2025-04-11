@@ -5,7 +5,40 @@
 #define ll long long
 using namespace std;
 
+// Second Try
 class Solution {
+    public:
+    
+      void totalSequence(vector<int> ip, int sum, int target, int &cnt) {
+          if(sum==target ) {
+              cnt++;
+              sum=0;
+              return;
+          }
+          
+          if(ip.empty()) {
+              sum=0;  return;
+          }
+          
+          int k = ip[0];
+          if(!ip.empty()) ip.erase(ip.begin());
+          
+          totalSequence(ip, sum, target, cnt);  // non pick
+          totalSequence(ip, sum+k, target, cnt);  // pick
+          
+      }
+    
+      int perfectSum(vector<int>& arr, int target) {
+          int cnt=0;
+          
+          totalSequence(arr, 0, target, cnt);
+          return cnt;
+      }
+};
+
+
+// First Try
+class Solution1 {
     public:
       void generateSeq(vector<int> ip, int k, vector<int> op, int &cnt) {
           if(ip.size()==0) {

@@ -12,6 +12,7 @@ int recursive(int day, int last, vector<vector<int>> &points, vector<vector<int>
     
     if(day==0) {
         int maxx=0;
+        // not to add anything, as in starting, we are only taking first activity, base case
         for(int i=0; i<=2; i++) {
             if(i!=last) {
                 maxx = max(maxx, points[day][i]);
@@ -22,6 +23,7 @@ int recursive(int day, int last, vector<vector<int>> &points, vector<vector<int>
     }
     
     int maxx=0;
+    // for activity
     for(int i=0; i<=2; i++) {
         if(i!=last) {
             int taskPoint = points[day][i] + recursive(day-1, i, points, dp);
@@ -35,6 +37,7 @@ int recursive(int day, int last, vector<vector<int>> &points, vector<vector<int>
 
 int maximumPoints(vector<vector<int>>& arr) {
     int n = arr.size();
+    // dp[days][activity] 
     vector<vector<int>> dp(n, vector<int> (4, -1));
     int maxx = recursive(n-1, 3, arr, dp);
     return maxx;

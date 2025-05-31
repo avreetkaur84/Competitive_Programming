@@ -88,6 +88,39 @@ Bit masking allows:
 
 ---
 
+## 🧠 `1 << cnt` vs `y << cnt`
+
+### 🔹 `1 << cnt`
+- **Meaning**: Shifts the number `1` to the left by `cnt` positions.
+- **Purpose**: Used to create a **bitmask** with only the `cnt`-th bit set.
+- **Effect**: Equivalent to `2^cnt`.
+
+#### ✅ Example:
+```cpp
+int cnt = 3;
+int res = 1 << cnt; // 1 << 3 = 8 → Binary: 00001000
+```
+
+### 🔹 `y << cnt`
+- **Meaning**: Shifts the entire binary representation of y to the left by cnt positions.
+- **Purpose**: Used to multiply y by 2^cnt or shift its bits left.
+- **Effect**: All bits in y are shifted; trailing zeros are added.
+
+#### ✅ Example:
+```cpp
+int y = 5;       // Binary: 00000101
+int cnt = 2;
+int res = y << cnt; // 5 << 2 = 20 → Binary: 00010100
+```
+
+| Expression | Purpose              | Result                         |
+| ---------- | -------------------- | ------------------------------ |
+| `1 << cnt` | Create a bitmask     | Single bit set at `cnt`-th pos |
+| `y << cnt` | Shift value `y` left | Multiply `y` by `2^cnt`        |
+
+
+---
+
 ## 6️⃣ Check if i-th Bit is Set
 
 ### ❓ Explanation:

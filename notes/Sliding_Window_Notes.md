@@ -18,6 +18,29 @@
 5. **Prefix Sum is NOT Needed**:
    - Unlike brute force or range sum problems where prefix sum might be needed, sliding window often maintains a **rolling sum or count** as the window moves.
 
+---
+
+## Monotonic Behavior
+Sliding Window works well when the value you're tracking changes monotonically:
+
+| Problem Type                  | Monotonic Behavior | Sliding Window Friendly |
+|------------------------------|--------------------|------------------------|
+| Sum of only positive numbers  | Yes                | Yes                    |
+| Count of distinct characters  | Yes                | Yes                    |
+| Sum including negative numbers| No                 | Prefer Prefix Sum      |
+| Product of elements           | No                 | Often unstable         |
+
+If behavior is non-monotonic, consider using prefix sum, hash map, or binary search instead.
+
+## When Not to Use Sliding Window?
+Avoid sliding window when:
+- You're dealing with non-contiguous elements.
+- The value being tracked does not change predictably (non-monotonic).
+- The problem involves combinatorics, recursion, or backtracking.
+- You're working on multiple windows or need global scanning (e.g., LIS problems).
+
+---
+
 ### 🧾 Common Conditions / Checks for Applicability
 
 | Condition | Explanation |
@@ -35,14 +58,6 @@
 - **Deque**: To maintain the min/max in a window in O(1) time (ex: max in sliding window).
 - **Array**: If the frequency range is small (like 26 lowercase letters), use simple frequency arrays.
 
-### ⚙️ Sliding Window Properties
-
-| Property | Meaning |
-|----------|--------|
-| Monotonic | If you're maintaining a window where elements follow a certain increasing/decreasing order (monotonic stack/deque). |
-| Rolling Calculation | Maintain sum/product/count inside the window as it moves instead of recalculating from scratch. |
-| Shrinking/Expanding | In variable-sized windows, you move `right` to expand and `left` to shrink until a condition is met. |
-| Greedy Element Removal | Sometimes used to drop elements from the window to maintain optimal result (e.g., smallest window with all characters). |
 
 ### 🧪 Example-Based Conditions
 
@@ -100,6 +115,89 @@ for right in range(len(arr)):
 
 ---
 
+## ✅ 3. "Exactly K" Trick Using At Most K - under variable size Sliding window
+
+### 🔍 Problem Pattern
+
+When you're asked to:
+- **Count subarrays/substrings with exactly K distinct elements**
+- Or any variation of “**exactly K occurrences**” type constraints
+
+### 🚩 Red Flag
+If implementing "exactly K" directly feels:
+- Overcomplicated
+- Requires too many conditions
+- Involves messy index tracking or nested logic
+
+➡️ Then it's time to **pivot your approach**.
+
+---
+
+### ✅ The Core Idea
+
+Use this identity:
+
+Count of subarrays with exactly K distinct elements =
+    Count of subarrays with **at most K** distinct elements
+  – Count of subarrays with **at most (K - 1)** distinct elements
+
+---
+
+### 🧠 Why It Works?
+
+- Every subarray with exactly K elements is **included in "at most K"**
+- Every subarray with fewer than K elements is **included in "at most (K-1)"**
+- Subtracting them leaves you with **only the ones that have exactly K**
+
+---
+
+### 🧩 Implementation Sketch
+
+```cpp
+int atMostK(vector<int>& nums, int k) {
+    int i = 0, res = 0;
+    unordered_map<int, int> freq;
+
+    for (int j = 0; j < nums.size(); j++) {
+        freq[nums[j]]++;
+
+        while (freq.size() > k) {
+            freq[nums[i]]--;
+            if (freq[nums[i]] == 0) freq.erase(nums[i]);
+            i++;
+        }
+
+        res += (j - i + 1); // all valid subarrays ending at j
+    }
+
+    return res;
+}
+
+int subarraysWithKDistinct(vector<int>& nums, int k) {
+    return atMostK(nums, k) - atMostK(nums, k - 1);
+}
+```
+
+---
+
+### 🧠 When to Use This Pattern?
+
+- You're counting subarrays or substrings with **exact** number of distinct items
+- Direct logic is getting too messy
+- You already know how to do "at most K" using sliding window
+
+---
+
+### 🏁 Summary
+
+| You Are Asked For...       | Consider Using...               |
+|----------------------------|----------------------------------|
+| Exactly K distinct items   | `atMost(K) - atMost(K - 1)`     |
+| Exactly K satisfying conds | Difference of prefix counts     |
+
+This is a **powerful technique** for converting hard counting problems into easier ones using sliding window + basic math.
+
+---
 # 📦 Where is Sliding Window Applicable?
 
 ## 🔹 Strings / Substrings

@@ -14,15 +14,14 @@ public:
         if(s.length()==0)   return 0;
 
         while(i<n && j<n) {
-            if(mp.find(s[j])==mp.end()) {
-                // not present
-                mp[s[j]]=j;
-            } else {
+            if(mp.find(s[j])!=mp.end()) {
+                // present
                 if(i<mp[s[j]]+1) {
                     i=mp[s[j]]+1;
                 }
-                mp[s[j]]=j;
-            }
+            } 
+
+            mp[s[j]]=j;
             maxx=max(j-i+1, maxx);
             j++;
             cout<<i<<"  "<<j<<"  "<<maxx<<endl;

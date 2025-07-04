@@ -6,6 +6,27 @@
 using namespace std;
 
 
+// Simple Recursion
+class Solution {
+  public:
+    bool helper(int idx, int target, vector<int> arr) {
+        if(target==0) return true;
+        
+        if(idx>=arr.size()) return false;
+        
+        // non-pick
+        bool non_pick = helper(idx+1, target, arr);
+        bool pick = helper(idx+1, target-arr[idx], arr);
+        
+        return non_pick || pick;
+    }
+  
+    bool isSubsetSum(vector<int>& arr, int sum) {
+        return helper(0, sum, arr);
+    }
+};
+
+
 // memoization approach
 bool cal(int idx, int target, vector<int>& arr, vector<vector<int>> &dp, int n) {
     if(target==0)  return true;
@@ -40,8 +61,6 @@ bool tabulation(vector<int>& arr, int target) {
     int n = arr.size();
     vector<vector<bool>> dp(n, vector<bool>(target+1, false));
     
-    // TABULATION
-    // BASE CASES
     for(int i=0; i<n; i++) dp[i][0]=true;
     if(arr[0]<=target)   dp[0][arr[0]]=true;     
     

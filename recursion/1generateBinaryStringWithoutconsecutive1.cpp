@@ -1,18 +1,8 @@
 // Question Link - https://www.geeksforgeeks.org/problems/generate-all-binary-strings/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
 
-// Dry run code on notebook for proper understanding
 
-//{ Driver Code Starts
-//Initial Template for C++
 #include<bits/stdc++.h>
 using namespace std;
-
-
-// } Driver Code Ends
-
-//User function Template for C++
-
-// we have got the length of string.
 
 class Solution{
 public:
@@ -53,28 +43,3 @@ public:
         return res;
     }
 };
-
-
-//{ Driver Code Starts.
-int main(){
-    int t = 1;
-    cin >> t;
-
-
-    while(t--){
-        //Input
-        int n; cin >> n;
-
-        Solution obj;
-        
-        vector<string> v = obj.generateBinaryStrings(n);
-        for(auto it:v) cout<<it<<" ";
-        cout << endl;
-    
-cout << "~" << "\n";
-}
-
-    return 0;
-}
-
-// } Driver Code Ends

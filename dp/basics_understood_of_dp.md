@@ -53,3 +53,14 @@ sum1 - sum2 = d → sum1 = (total + d)/2
 ## dp[i][j] = ways to reach position j using i steps
 
 ## Seriously, If I will survive this DSA hell mode, I can really survive anything.
+
+Every DP problem is like:
+    "I want to compute answer for (i, j). To do that, I need to pull it from smaller states."
+    So you ask:
+    
+        1. What does (i, j) mean?
+        2. What choices can I take from here?
+        3. What previous state would that choice come from?
+
+
+# Dp is torture dude, each day, you are like I am gonna crush this DP, but at the end, DP just crushes you by showing its another realm, but lets stay focused, each day counts, so lets just make efforts one day at a time, will get results eventually, it requires patience

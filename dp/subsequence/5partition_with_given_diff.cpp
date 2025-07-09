@@ -20,6 +20,8 @@ using namespace std;
 
     Another deep realization - my equation is not that smart, this eq - target = t+d/2 is insanely smart, because here we are directly counting the number of curr or sums possible that will have exact d differnece!!!! OMG movement. So, so have to not focus on the only main problem, but need to outsmart it, like we have to get that result, but achiveing it can be differnt. Like in competitive programing, we don't have to perform the exact operation but need to check what effect that operation will have on the result.
     THIS IS DEEP - Now everyhting makes sense.
+
+    Finally tabulation fucking worked
 */
 
 void printDP(vector<vector<int>> dp) {
@@ -72,6 +74,8 @@ class Tabulation {
         int countPartitions(vector<int>& arr, int d) {
             int n = arr.size();
             int total = accumulate(arr.begin(), arr.end(), 0);
+            
+            if((total+d) & 1) return 0;
             int target = (total+d)/2;
             
             vector<vector<int>> dp(n+1, vector<int> (target+1, 0));
@@ -81,19 +85,20 @@ class Tabulation {
             for(int i=1; i<=n; i++) {
                 for(int j=0; j<=target; j++) {
                     int cnt = 0;
-                    if(j+arr[i-1]<=target) {
-                        cnt += dp[i-1][j+arr[i-1]];
-                    }
                     
                     cnt += dp[i-1][j];
+                    
+                    if(arr[i-1]<=j) {
+                        cnt += dp[i-1][j-arr[i-1]];
+                    }
+                    
                     dp[i][j] = cnt;
                 }
             }
-
-            cout<<"Print: "<<endl;
-            printDP(dp);
-            return 0;
-    }
+            
+            return dp[n][target];
+            
+        }
 };
 
 int main() {

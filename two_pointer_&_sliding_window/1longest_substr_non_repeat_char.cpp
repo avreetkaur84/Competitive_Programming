@@ -3,6 +3,14 @@
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
+/*
+    Revising on 10 July, 2025
+    1. I tried t solve this question again, and got the idea of using the map on first instinct, as we can store the idx number and char in map. 
+    2. But, I overcomplicated things after this step, as I started to go deeper into techniques, nstead of staying focused on main problem. So, I need to first explore my intution deeply then recognise the mistakes and then go for correcting them.
+    3. I have little patience for revision, like solving the questions that I have already one, and this is bad, I cna see.
+
+    4. Now, I checked my Approach1 and Approach2 which I have done earlier, and I can't seem to comprehend why I used set, necause using map was definetely much much efficient. So, my thinking has evolved somewhat.
+*/
 
 // Finally submitted after 7 submissions (crying face)
 class Approach3 {

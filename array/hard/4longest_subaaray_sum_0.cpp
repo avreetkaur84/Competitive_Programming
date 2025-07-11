@@ -30,4 +30,24 @@ class Solution {
     3. I think 2 months ago, I solved an array question somewhat similar using map, like we were searching for remaining sum in the map - but I can't clearly remember this technique.
     4. Next, I can apply dp, but Complexities given are - O(n) for both TC and SC
 
+    -- Its hashmap with prefix sm
 */
+
+
+class Solution {
+  public:
+    int maxLength(vector<int>& arr) {
+        int maxLen=0, n=arr.size();
+        long long sum=0;
+        unordered_map<long long, int> mp;
+        
+        for(int i=0; i<n; i++) {
+            sum+=arr[i];
+            if(sum==0) maxLen = max(maxLen, i+1);
+            if(mp.find(sum)!=mp.end()) maxLen = max(maxLen, i-mp[sum]);
+            if(mp.find(sum)==mp.end()) mp[sum]=i;
+        }
+        
+        return maxLen;
+    }
+};

@@ -71,6 +71,14 @@ return res;
 **Why it works:**  
 All duplicates cancel each other, leaving the odd one out.
 
+```
+❌ BUT! If you have:
+    - Multiple numbers appearing once
+    - Or some elements more than twice
+    - Or you want to remove all duplicates and keep distinct values
+→ XOR won’t help you.
+You’ll need a set, unordered_map, or sorting + two-pointer approach.
+```
 ---
 
 ## 🔹 Property 5: XOR of numbers from 1 to N follows a pattern

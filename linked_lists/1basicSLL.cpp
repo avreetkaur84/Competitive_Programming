@@ -1,7 +1,4 @@
-// Question Link - 
-
 #include <bits/stdc++.h>
-#define ll long long
 using namespace std;
 
 class Node {

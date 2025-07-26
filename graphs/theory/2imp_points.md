@@ -1,0 +1,2 @@
+### DFS is not used to find the shortest path in the trees but not in graphs brcause we have unique paths in teh nodes in trees but we have exponential number of paths between two nodes in the graph.
+# We always use BFS to find the shortest distance on graph.

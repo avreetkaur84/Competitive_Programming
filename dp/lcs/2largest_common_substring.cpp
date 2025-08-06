@@ -21,7 +21,7 @@ void memo(string &s1, string &s2, int m, int n, int cnt, int &maxx) {
     }
 }
 
-int LCSubStr(string &str1, string &str2)
+int LCSubStr(string str1, string str2)
 {
     int maxx=0;
     memo(str1, str2, str1.length(), str2.length(), 0, maxx);
@@ -29,7 +29,7 @@ int LCSubStr(string &str1, string &str2)
 
 }
 
-int tabulation(string &str1, string &str2)
+int tabulation(string str1, string str2)
 {
     int m=str1.length(), n=str2.length(), maxx=0;
     vector<vector<int>> dp(m+1, vector<int> (n+1, 0));
@@ -47,5 +47,11 @@ int tabulation(string &str1, string &str2)
     }
     
     return maxx;
+}
 
+int main() {
+    cout<<tabulation("hello", "helo")<<endl;
+    cout<<tabulation("olleh", "oleh")<<endl;
+    cout<<LCSubStr("olleh", "oleh")<<endl;
+    cout<<LCSubStr("hello", "helo")<<endl;
 }

@@ -5,6 +5,47 @@
 #define ll long long
 using namespace std;
 
+
+// MOST OPTIMAL SOLUTION - 3 AUG, 2025
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n=nums.size();
+        unordered_map<int, int> mp;
+        for(int i=0; i<n; i++) {
+            int x=target-nums[i];
+            if(mp.find(x)!=mp.end()) return {mp[x], i};
+            mp[nums[i]]=i;
+        }
+
+        return {};
+    }
+};
+
+// NOT RIGHT SOLUTION - IT WILL FAIL AS WE HAVE TO RETURN INDEX NOT NUMBER.
+class Solution {
+public:
+    // binary serach is not a good option for 2 sum as we have to return the indexes not numbers, so optimal choice for this question is hashmap
+
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int l=0, h=nums.size()-1, n=nums.size();
+        sort(nums.begin(), nums.end());
+
+        while(l<h) {
+            if(nums[l]+nums[h]==target) return {l, h};
+            else if(nums[l]+nums[h]<target) {
+                int y=nums[l];
+                while(l<n && nums[l]==y) l++;
+            } else {
+                int y=nums[h];
+                while(h>=0 && nums[h]==y) h--;
+            }
+        }
+
+        return {};
+    }
+};
+
 class Solution {
     public:
         vector<int> twoSum(vector<int>& nums, int target) {

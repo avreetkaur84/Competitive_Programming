@@ -71,15 +71,74 @@ public:
     }
 };
 
+class CQ {
+public:
+    int *arr;
+    int capacity;
+    int size;
+    int front, rear;
+
+    CQ(int cap) {
+        front=-1; rear=-1; capacity=cap; size=0;
+        arr = new int[capacity];
+    }
+
+    void enqueue(int val) {
+        // from rear side
+        if((rear+1)%capacity==front) {
+            cout<<"Overflow"<<endl; return;
+        }
+
+        if(front==-1 && rear==-1) {
+            rear=front=0;
+        } else rear=(rear+1)%capacity;
+
+        size++;
+        arr[rear]=val;
+    }
+
+    void dequeue() {
+        // from front side
+        if(front==-1) {
+            cout<<"Underflow"<<endl;  return;
+        }
+
+        size--;
+        if(rear==front) front=rear=-1;
+        else front=(front+1)%capacity;
+    }
+
+    bool isEmpty() {
+        return (front==-1 && rear==-1);
+    }
+
+    bool isFull() {
+        return ((rear+1)%capacity==front);
+    }
+
+    void display() {
+        if(front==-1) {
+            cout<<"No elements present \n"; return;
+        }
+
+        for(int i=0; i<size; i++) {
+            cout<<arr[(front+i)%capacity]<<" ";
+        }
+
+        cout<<endl;
+    }
+};
+
+
 int main() {
-    CircularQueue cq(5);
+    CQ cq(5);
 
     cq.enqueue(10);
     cq.enqueue(20);
     cq.enqueue(30);
     cq.display();
 
-    cq.peek();
+    // cq.peek();
 
     cq.dequeue();
     cq.display();

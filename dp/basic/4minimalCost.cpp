@@ -9,7 +9,6 @@ class Solution {
       // start with memoization
       int memoization(int k, vector<int> &arr, vector<int> &dp, int n) {
           if(n==0)    return 0;
-          
           if(dp[n]!=-1)   return dp[n];
           
           // dp[n] = dp[n-1]+energy[n-1]

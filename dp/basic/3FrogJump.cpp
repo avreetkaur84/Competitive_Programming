@@ -1,4 +1,4 @@
-// Question Link -https://www.geeksforgeeks.org/problems/geek-jump/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=geek-jump
+// Question Link - https://www.geeksforgeeks.org/problems/geek-jump/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=geek-jump
 
 #include <iostream>
 #include <bits/stdc++.h>
@@ -13,8 +13,7 @@ public:
         if (n == 0)
             return 0;
 
-        if (dp[n] != -1)
-            return dp[n];
+        if (dp[n] != -1) return dp[n];
 
         left = memoization(height, dp, n - 1) + abs(height[n] - height[n - 1]);
 

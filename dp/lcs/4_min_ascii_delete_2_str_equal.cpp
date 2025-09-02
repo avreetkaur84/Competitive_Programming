@@ -5,7 +5,7 @@
 using namespace std;
 
 /*
-    Lesson learnt - Try to store the thing that you need in dp array. Here I wanted the ascii sum of characters, so I is optimal to store that in dp array. Creating global variable to track this sum is huge mistake which I made on my part earlier.
+    Lesson learnt - Try to store the thing that you need in dp array. Here I wanted the ascii sum of characters, so it is optimal to store that in dp array. Creating global variable to track this sum is huge mistake which I made on my part earlier.
 */
 
 class Solution {

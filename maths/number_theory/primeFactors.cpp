@@ -4,6 +4,13 @@
 #define ll long long
 using namespace std;
 
+/*
+    - When we loop from 2 upwards, every time we find a divisor i, we strip it completely from n.
+    - If i were composite, it would have a smaller prime factor p < i, and we would have already divided out all p's earlier.
+    - Therefore, no composite i can ever divide n at its turn — only primes survive.
+    - At the end, if n > 1, it’s prime itself.
+*/
+
 // Given a number N. Find its unique prime factors in increasing order.
 
     vector<int> AllPrimeFactors(int n) {

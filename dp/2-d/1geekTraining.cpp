@@ -11,8 +11,8 @@ int recursive(int day, int last, vector<vector<int>> &points, vector<vector<int>
     if (dp[day][last] != -1) return dp[day][last];
     
     if(day==0) {
-        int maxx=0;
         // not to add anything, as in starting, we are only taking first activity, base case
+        int maxx=0;
         for(int i=0; i<=2; i++) {
             if(i!=last) {
                 maxx = max(maxx, points[day][i]);

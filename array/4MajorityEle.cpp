@@ -5,6 +5,19 @@
 #define ll long long
 using namespace std;
 
+/*
+    ## Moore's Algo 
+    Core Idea:  
+    We’re trying to find the majority element (appearing > n/2 times).
+    The magical observation is:
+        If you pair each occurrence of the majority element with a different element, the majority will still survive at the end because it’s in the majority.
+
+    Mental Hook: 
+    Whenever you see the phrase “find element that occurs > n/2 times”, remember:
+        “Pairing-off” → majority survives.
+        Moore’s Voting = cancel enemies, survivor is majority.
+*/
+
 class Solution {
     public:
         int majorityElement(vector<int>& nums) {

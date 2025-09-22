@@ -4,6 +4,20 @@
 #define ll long long
 using namespace std;
 
+// Revised again on 20 Sep, 2025
+/*
+    Pure Backtracking.
+    - We have root, lf, rf
+    - If node is found in lf -> it return found node
+    - If node is found in rf -> it retuns found node
+    - If node is not found -> in returns NULL, means when root becomes NULL
+    - So, we will have 3 cases:
+        1. Lf = NULL -> means both nodes will be in rf, return rf
+        2. rf = NULL -> means both nodes will be in lf, return lf
+        3. LF!=null and rf!=NULL -> means boh nodes are under root, so will return root.
+*/
+
+
 /*
     Here, I have to return that node, who has both the nodes present in its subtree.
     Now, tree only traverses downward, 

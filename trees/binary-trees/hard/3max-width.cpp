@@ -5,7 +5,7 @@
 using namespace std;
 
 /*
-    I didn't know how to sove this question, so I watched striver tutorial, and got the intution. To be honest, I learnt a lot from this question. It was my first time, dealig with indexes if binary tree and then even converting them to avoid int overflow.
+    I didn't know how to solve this question, so I watched striver tutorial, and got the intution. To be honest, I learnt a lot from this question. It was my first time, dealig with indexes of binary tree and then even converting them to avoid int overflow.
     I go tthe intution earlier that level order traversal will be implemented, but I didn't know how exactly.
     Algorithm:
     1. We have to put the node and its index in the queue.
@@ -30,7 +30,7 @@ public:
         if(root->left==nullptr && root->right==nullptr) return 1;
         queue<pair<TreeNode*, long long>> q; int maxWd=0;
         
-        if(root) q.push({root, 0});
+        if(root) q.push({root, 0});        // {node, idx}
 
         while(!q.empty()) {
             int n=q.size(); long long minn=q.front().second, maxx=-1;

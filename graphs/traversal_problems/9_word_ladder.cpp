@@ -33,7 +33,11 @@ public:
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
         set<char> alp = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         set<string> st; int n=wordList.size(), cnt=0;
+
+        // we are using set to check if a word made exists in our list in O(1) time.
+        // I think it would be more better if I stored the cnt in the queue itself for words, {word, no.}
         queue<string> q; q.push(beginWord);
+
         for(int i=0; i<n; i++) st.insert(wordList[i]);
         // cout<<st.size()<<endl;
 
@@ -42,7 +46,7 @@ public:
 
         while(!q.empty()) {
            int qsize=q.size(); cnt++;
-        //    cout<<cnt<<"  "<<qsize<<endl;
+           // cout<<cnt<<"  "<<qsize<<endl;
            for(int i=0; i<qsize; i++) {
               string word=q.front(); q.pop();
               bool flag = check(word, endWord, alp, st, q);

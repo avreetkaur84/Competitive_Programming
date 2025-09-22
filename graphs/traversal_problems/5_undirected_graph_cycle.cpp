@@ -71,9 +71,6 @@ class Solution {
             adj[edges[i][1]].push_back(edges[i][0]);
         }
         
-        // for(int i=0; i<adj[3].size(); i++) cout<<adj[3][i]<<"   ";
-        // cout<<endl;
-        
         for(int i=0; i<V; i++) {
             if(vt[i]!=1 && adj[i].size()>0) {
                 // vt[i]=1;

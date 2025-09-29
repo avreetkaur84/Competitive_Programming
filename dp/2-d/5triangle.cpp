@@ -5,6 +5,27 @@
 #define ll long long
 using namespace std;
 
+// again tried on 26 Sep, 2025
+    int memo(int i, int j, vector<vector<int>>& triangle, vector<vector<int>> &dp) {
+        // base
+        if(i==triangle.size()-1) return triangle[i][j];
+        if(dp[i][j]!=INT_MAX) return dp[i][j];
+
+        // choice dia
+        int choice1 = triangle[i][j]+memo(i+1, j, triangle, dp);
+        int choice2 = triangle[i][j]+memo(i+1, j+1, triangle, dp);
+
+        // result
+        return dp[i][j] = min(choice1, choice2);
+    }
+
+    int minimumTotal(vector<vector<int>>& triangle) {
+        int m = triangle.size();
+        int n = triangle[m-1].size();
+        vector<vector<int>> dp(m, vector<int>(n, INT_MAX));
+        return memo(0, 0, triangle, dp);
+    }
+
 void print2DVector(const vector<vector<int>>& vec) {
     for (const auto& row : vec) {
         for (const auto& elem : row) {

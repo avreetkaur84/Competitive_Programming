@@ -4,8 +4,30 @@
 #define ll long long
 using namespace std;
 
+// Second approach - most optimised - two pointers - 3 oct, 2025
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        int n=height.size();
+        int i=0, j=n-1, l_mx=height[i], r_mx=height[j], res=0;
 
-// My first approach - unexpected AC - I was just playing with technique and boom
+        while(i<=j) {
+            if(l_mx<=r_mx) {
+                res += max(0, l_mx-height[i]);
+                i++; 
+                if(i<n) l_mx = max(l_mx, height[i]);
+            } else {
+                res += max(0, r_mx-height[j]);
+                j--; 
+                if(j>-1) r_mx = max(r_mx, height[j]);
+            }
+        }
+
+        return res;
+    }
+};
+
+// My first approach - unexpected AC - I was just playing with technique and boom - Prefix and sufix - 14 july, 2025
 class Solution {
 public:
     int trap(vector<int>& height) {

@@ -18,12 +18,24 @@ using namespace std;
 #define EACH(x, a) for (auto& x : a)
 
 /*
+    Recursion
 
 */
 
+void rec(int st, int end, int n, vector<pair<int, int>> &arr) {
+    if(n==0) return;
+    int oth = 6-(st+end);
+    rec(st, oth, n-1, arr); 
+    arr.push_back({st, end});
+    rec(oth, end, n-1, arr); 
+}
+
 void solve() {
     int n; cin >> n;
-    vi arr(n); FOR(i, n) cin >> arr[i];
+    vector<pair<int, int>> arr;
+    rec(1, 3, n, arr);
+    cout<<arr.size()<<"\n";
+    FOR(i, arr.size()) cout<<arr[i].first<<" "<<arr[i].second<<"\n";
 }
 
 int main() {
@@ -31,6 +43,6 @@ int main() {
     cin.tie(nullptr);
 
     int t = 1;
-    cin >> t; // uncomment for multi-test
+    // cin >> t; // uncomment for multi-test
     while (t--) solve();
 }

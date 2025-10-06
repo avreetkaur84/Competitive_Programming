@@ -5,6 +5,10 @@
 using namespace std;
 
 // Built everything from scratch 
+/*
+    This sum used offset based dp, means sum can go from range -sum to +sum and as indices can't be negative, so we took sum offset, and now both positive and negative values can be accomodated
+*/
+
 
 class Solution {
 public:

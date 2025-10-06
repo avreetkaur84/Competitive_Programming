@@ -1,4 +1,3 @@
-// Question Link - 
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,12 +18,28 @@ using namespace std;
 #define EACH(x, a) for (auto& x : a)
 
 /*
-
+    - if num is divisible by 2^x, then it is divisible by all the 2^y, where y<x.
+    - if num is not divisible by 2^x, it is not divisible by any 2^y, where y>x
+    - and after performing num+2^x-1 -> now, num won't be dvisible by any 2^y, where y>=x. So, this will help to reduce the time complexity.
 */
 
 void solve() {
-    int n; cin >> n;
-    vi arr(n); FOR(i, n) cin>>arr[i];
+    int n, q; cin>>n>>q;
+    vll arr(n); FOR(i, n) cin >> arr[i];
+    vll x(q); FOR(i, q) cin >> x[i];
+    ll minn = LLONG_MAX;
+
+    FOR(i, q) {
+        ll val = 1<<x[i];
+        if(val>=minn) continue;
+        minn = min(minn, val);
+        FOR(j, n) {
+            if(arr[j]%val==0) arr[j]+=(val>>1);
+        }
+    }
+
+    FOR(i, n) cout<<arr[i]<<" ";
+    cout<<"\n";
 }
 
 int main() {
@@ -35,5 +50,3 @@ int main() {
     cin >> t; // uncomment for multi-test
     while (t--) solve();
 }
-
-

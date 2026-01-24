@@ -30,7 +30,7 @@ void make_set(int v) {
 
 // Find-set: climb up until root (representative)
 int naive_find_set(int v) {
-    if (v == parent[v])
+    if(v == parent[v])
         return v;
     return naive_find_set(parent[v]); 
 }

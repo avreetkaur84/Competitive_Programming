@@ -16,16 +16,16 @@ void printPrimes(vector<bool> arr) {
 void sieveAlgo(vector<bool> &arr, int n) {
     arr[0]=false;   arr[1]=false;
 
-    for(int i=2; i*i<=n; i++) {
+    for(int i=2; i*i<=n; i++) {                     // root (n)
         if(arr[i]) {
-            for(int j=i*i; i<n; j+=i) {
+            for(int j=i*i; i<n; j+=i) {             // log (root(n))
                 arr[j]=false;
             }
         }
     }
 }
 
-
+// root(n) log(root(n))
 
 int main()
 {

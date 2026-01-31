@@ -31,7 +31,7 @@
 
 ## 🟥 BINARY SEARCH ON ANSWER (THIS IS THE REAL GAME)
 
-9. Koko Eating Bananas
+9. Koko Eating Bananas                                  🟢 Done  
 10. Capacity to Ship Packages Within D Days
 11. Minimum Number of Days to Make m Bouquets
 12. Split Array Largest Sum

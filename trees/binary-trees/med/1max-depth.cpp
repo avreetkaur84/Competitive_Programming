@@ -5,7 +5,6 @@
 using namespace std;
 
 
-//  * Definition for a binary tree node.
  struct TreeNode {
       int val;
       TreeNode *left;
@@ -15,6 +14,7 @@ using namespace std;
       TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  };
  
+// max depth of binary tree
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
@@ -24,5 +24,19 @@ public:
         int rh = maxDepth(root->right);
 
         return 1+max(lh, rh);
+    }
+};
+
+// min depth of binary tree
+class Solution {
+public:
+    int minDepth(TreeNode* root) {
+        if(!root) return 0;
+
+        int lf = minDepth(root->left);
+        int rf = minDepth(root->right);
+
+        if(lf==0 || rf==0) return 1+max(lf,rf);
+        return 1+min(lf, rf);
     }
 };

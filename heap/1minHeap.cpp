@@ -4,6 +4,41 @@
 #define ll long long
 using namespace std;
 
+/*
+HEAP CHEAT SHEET:
+
+1. Min Heap:
+   - Top() gives SMALLEST element
+   - In C++: priority_queue<int, vector<int>, greater<int>>
+   - Used when:
+       -> You want to KEEP largest elements
+       -> You want to REMOVE smallest elements
+
+   Example: Kth LARGEST element
+   Strategy:
+   - Keep only K largest elements in heap
+   - Whenever size > K, remove the SMALLEST
+   - After processing all elements:
+       -> Top() = Kth largest
+*/
+
+/*
+2. Max Heap:
+   - Top() gives LARGEST element
+   - In C++: priority_queue<int>
+   - Used when:
+       -> You want to KEEP smallest elements
+       -> You want to REMOVE largest elements
+
+   Example: Kth SMALLEST element
+   Strategy:
+   - Keep only K smallest elements in heap
+   - Whenever size > K, remove the LARGEST
+   - After processing all elements:
+       -> Top() = Kth smallest
+*/
+
+
 class Solution {
 public:
 // Min heap

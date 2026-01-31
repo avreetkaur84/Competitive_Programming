@@ -16,6 +16,7 @@
 [639. Decode Ways II](https://leetcode.com/problems/decode-ways-ii/description/)
 [3693. Climbing Stairs II](https://leetcode.com/problems/climbing-stairs-ii/description/)
 [2735. Collecting Chocolates](https://leetcode.com/problems/collecting-chocolates/description/)
+[980. Unique Paths III](https://leetcode.com/problems/unique-paths-iii/description/)
 
 
 22 Jan, 2026:

@@ -7,7 +7,7 @@ using namespace std;
 
 // a needs to be greater
 int euclidean(int a, int b) {
-    if(b==0)    return a;
+    if(b==0) return a;
     if(b>a) swap(a, b);
 
     return euclidean(b, a%b);

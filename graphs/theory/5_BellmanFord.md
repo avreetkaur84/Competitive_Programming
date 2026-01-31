@@ -35,6 +35,56 @@
 
 ---
 
+## 🔹 Code
+```
+struct Edge {
+    int u, v, w;
+};
+
+void bellmanFord(int V, int E, vector<Edge>& edges, int src) {
+    const int INF = 1e9;
+    vector<int> dist(V, INF);
+    dist[src] = 0;
+
+    // Step 1 & 2: Relax all edges V-1 times
+    for (int i = 1; i <= V - 1; i++) {
+        for (int j = 0; j < E; j++) {
+            int u = edges[j].u;
+            int v = edges[j].v;
+            int w = edges[j].w;
+
+            if (dist[u] != INF && dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+            }
+        }
+    }
+
+    // Step 3: Check for negative weight cycle
+    for (int j = 0; j < E; j++) {
+        int u = edges[j].u;
+        int v = edges[j].v;
+        int w = edges[j].w;
+
+        if (dist[u] != INF && dist[u] + w < dist[v]) {
+            cout << "Negative weight cycle detected\n";
+            return;
+        }
+    }
+
+    // Print shortest distances
+    cout << "Vertex\tDistance from Source\n";
+    for (int i = 0; i < V; i++) {
+        if (dist[i] == INF)
+            cout << i << "\tINF\n";
+        else
+            cout << i << "\t" << dist[i] << "\n";
+    }
+}
+
+```
+
+---
+
 ## 🔹 Characteristics
 
 * Works for: Directed / Undirected, Weighted (positive + negative).
@@ -75,3 +125,4 @@
 * “Unlike Dijkstra, it is safe for negative weights but slower (O(V·E)).”
 
 ---
+

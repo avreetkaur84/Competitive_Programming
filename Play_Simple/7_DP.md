@@ -34,12 +34,12 @@
 
 ## 🟨 SUBSET / KNAPSACK PATTERNS (VERY HIGH ROI)
 
-19. 0/1 Knapsack
-20. Partition Equal Subset Sum
-21. Subset Sum
-22. Coin Change
-23. Coin Change II
-24. Target Sum
+19. 0/1 Knapsack                             🟢 Done  
+20. Partition Equal Subset Sum               🟢 Done  
+21. Subset Sum                               🟢 Done  
+22. Coin Change                              🟢 Done  
+23. Coin Change II                           🟢 Done  
+24. Target Sum                               🟢 Done  
 
 👉 Interviewers love this pattern disguised under stories.
 
@@ -48,7 +48,7 @@
 ## 🟥 STRING DP (COMMON AND TRICKY)
 
 25. Longest Palindromic Substring
-26. Distinct Subsequences
+26. Distinct Subsequences                    🟢 Done    `[solved on my own - dp hard under 30 mins on first try :)]`
 27. Regular Expression Matching
 28. Wildcard Matching
 

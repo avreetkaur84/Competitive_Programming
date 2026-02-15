@@ -13,7 +13,7 @@ This is called contribution technique.
 
 
 /*
-This falls under the category: “Contribution Technique + Monotonic Stack” for Range Frequency problems.
+    This falls under the category: “Contribution Technique + Monotonic Stack” for Range Frequency problems.
     Some classic examples in the same pattern family:
     Sum of subarray maximums
     Largest rectangle in histogram

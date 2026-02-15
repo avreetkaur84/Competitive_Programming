@@ -6,9 +6,9 @@
 2. Binary Tree Preorder Traversal
 3. Binary Tree Postorder Traversal
 4. Level Order Traversal
-5. Maximum Depth of Binary Tree
-6. Minimum Depth of Binary Tree
-7. Invert Binary Tree
+5. Maximum Depth of Binary Tree                🟢 Done  
+6. Minimum Depth of Binary Tree                🟢 Done  
+7. Invert Binary Tree                          🟢 Done  
 
 👉 Interviewers silently judge here. Don’t disappoint.
 
@@ -16,12 +16,12 @@
 
 ## 🟩 PATH / HEIGHT / DIAMETER (VERY HIGH FREQUENCY)
 
-8. Diameter of Binary Tree
-9. Balanced Binary Tree
-10. Path Sum
-11. Path Sum II
-12. Maximum Path Sum
-13. Sum Root to Leaf Numbers
+8. Diameter of Binary Tree                     🟢 Done  
+9. Balanced Binary Tree                        🟢 Done  
+10. Path Sum                                   🟢 Done  
+11. Path Sum II                                🟢 Done  
+12. Maximum Path Sum                           🟢 Done  
+13. Sum Root to Leaf Numbers                   🟢 Done  
 
 👉 Tests DFS thinking and recursion clarity.
 

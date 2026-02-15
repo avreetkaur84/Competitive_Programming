@@ -2,21 +2,21 @@
 
 ## 🟦 ARRAYS (Foundational + Tricky)
 
-1. Two Sum
+1. Two Sum                                              🟢
 2. Best Time to Buy and Sell Stock (I, II logic)
-3. Maximum Subarray (Kadane’s Algorithm)
-4. Majority Element
-5. Move Zeroes
-6. Merge Sorted Array
-7. Rotate Array
-8. Product of Array Except Self
-9. Subarray Sum Equals K
-10. Longest Consecutive Sequence
+3. Maximum Subarray (Kadane’s Algorithm)                🟢  
+4. Majority Element                                     🟢
+5. Move Zeroes                                          🟢
+6. Merge Sorted Array                                   🟢
+7. Rotate Array                                         🟢
+8. Product of Array Except Self                         🟢
+9. Subarray Sum Equals K                                🟢
+10. Longest Consecutive Sequence                        🟢
 11. Find Minimum in Rotated Sorted Array
 12. Search in Rotated Sorted Array
-13. Container With Most Water
-14. Maximum Product Subarray
-15. Set Matrix Zeroes
+13. Container With Most Water                           🟢
+14. Maximum Product Subarray                            🟢
+15. Set Matrix Zeroes                                   🟢
 
 👉 **Why these matter**:
 Prefix sum, greedy, two pointers, edge-case handling — interview staples.
@@ -25,12 +25,12 @@ Prefix sum, greedy, two pointers, edge-case handling — interview staples.
 
 ## 🟩 STRINGS (High ROI)
 
-16. Valid Anagram
-17. Longest Substring Without Repeating Characters
+16. Valid Anagram                                       🟢
+17. Longest Substring Without Repeating Characters      🟢
 18. Longest Palindromic Substring
-19. Valid Parentheses
-20. Group Anagrams
-21. String to Integer (atoi)
+19. Valid Parentheses                                   🟢
+20. Group Anagrams                                      🟢
+21. String to Integer (atoi)                            🟢
 22. Implement strstr() / Find First Occurrence
 23. Longest Common Prefix
 24. Palindrome Check (with cleanup)

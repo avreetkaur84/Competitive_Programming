@@ -1,0 +1,5 @@
+1. [3578. Count Partitions With Max-Min Difference at Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/description/?envType=daily-question&envId=2026-02-08)
+2. [1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/description/)
+3. [2762. Continuous Subarrays](https://leetcode.com/problems/continuous-subarrays/description/)
+4. [713. Subarray Product Less Than K](https://leetcode.com/problems/subarray-product-less-than-k/description/)
+5. [992. Subarrays with K Different Integers](https://leetcode.com/problems/subarrays-with-k-different-integers/description/)

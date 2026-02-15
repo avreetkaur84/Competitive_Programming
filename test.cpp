@@ -5,82 +5,16 @@
 #define ll long long
 using namespace std;
 
- struct TreeNode {
-      int val;
-      TreeNode *left;
-      TreeNode *right;
-      TreeNode() : val(0), left(nullptr), right(nullptr) {}
-      TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- };
+/*
+    There is a special sqaure room with mirrors, 
+    teher are receoptorrs for eahc fo teh remaning columns, number 0,1,2. Square room has walls of lenghth p and laser lay from south west corner, first meet the east wall at distance q form teh zero receptor. Givne two intergers p and q, 
 
-                            
-#include <iostream>
-#include <queue>
-#include <sstream>
-using namespace std;
+    solved using lcm , number theory
+    1661 D
+*/
 
-// Definition for a
-// binary tree node.
-struct TreeNode {
-    int val;
-    TreeNode* left;
-    TreeNode* right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-};
-
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
-class Solution {
-public:
-    struct compare {
-        bool operator()(ListNode* a, ListNode* b) {
-            return a->val>b->val;
-        }
-    };
-
-    void traverseLL(ListNode* head, priority_queue<ListNode*, vector<ListNode*>, compare> &pq) {
-        if(head==nullptr) return;
-
-        while(head!=nullptr) {
-            pq.push(head);
-            head = head->next;
-        }
-    }
-
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
-        if(lists.size()==0) return nullptr;
-
-        priority_queue<ListNode*, vector<ListNode*>, compare> pq;
-        ListNode* head = nullptr;
-
-        for(int i=0; i<lists.size(); i++) {
-            if(lists[i]==nullptr) continue;
-            traverseLL(lists[i], pq);
-        }
-
-        cout<<pq.size()<<endl;
-        if(head==nullptr && !pq.empty()) {
-            head = pq.top(); pq.pop();
-        }
-
-        ListNode* mover = head;
-
-        while(!pq.empty()) {
-            mover->next = pq.top(); 
-            mover = mover->next;
-            mover->next=nullptr;
-            pq.pop();
-        }
-
-        return head;
-    }
-};
+int main() {
+    int i=2, n=15; 
+    int x = (n & ~(1<<i));
+    cout<<x<<"\n";
+}

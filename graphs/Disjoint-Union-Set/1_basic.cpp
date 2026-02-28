@@ -18,9 +18,9 @@ using namespace std;
 
 // Naive Approach Implementation
 
-const int N = 1e5 + 10; // max number of elements
-int parent[N];          // parent array
-int size[N];          // size array
+const int N = 1e5 + 10;  // max number of elements
+int parent[N];           // parent array
+int size[N];             // size array
 
 // Make-set: every element is its own parent
 void make_set(int v) {

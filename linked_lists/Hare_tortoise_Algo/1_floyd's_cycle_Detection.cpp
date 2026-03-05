@@ -1,4 +1,5 @@
 // Question Link - https://leetcode.com/problems/linked-list-cycle-ii/
+// Proof - https://leetcode.com/problems/linked-list-cycle-ii/solutions/5370700/easy-proof-beats-100-percent-users-floyd-1jnk/
 
 #include <bits/stdc++.h>
 #define ll long long

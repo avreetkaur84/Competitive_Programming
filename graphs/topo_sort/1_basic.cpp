@@ -28,7 +28,6 @@ class Solution {
     }
     
     // now we have to check cycle. 
-  
     vector<int> topoSort(int V, vector<vector<int>>& edges) {
         vector<vector<int>> adj(V); 
         arr2adj(edges, adj); 

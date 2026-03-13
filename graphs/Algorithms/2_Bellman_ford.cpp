@@ -13,7 +13,6 @@ class Solution {
     }
   
     vector<int> bellmanFord(int V, vector<vector<int>>& edges, int src) {
-        // Code here
         vector<int> dist(V, 1e8);
         dist[src]=0; 
         set<int> st; st.insert(src);
@@ -32,7 +31,7 @@ class Solution {
                     if(dist[u]!=10e8 && dist[u]+w < dist[v]) dist[v]=dist[u]+w;
                 }
             }
-            // display(dist);
+            display(dist);
         }
         
         return dist;

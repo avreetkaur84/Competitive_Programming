@@ -26,46 +26,32 @@ Multi-source BFS → Push all sources → Expand with shortest-first guarantee �
 */
 
 
-// On second try - doing this question felt like cramming, as I have made quite number of mistakes while solving
 class Solution {
 public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
-        int m=mat.size(), n=mat[0].size(), cnt=0;
-        vector<vector<int>> res = mat; vector<vector<int>> vt(m, vector<int> (n, 0));
-        queue<vector<int>> q;  //{i, j, dis}
-
-        for(int i=0; i<m; i++) {
-            for(int j=0; j<n; j++) {
+        int n=mat.size(), m=mat[0].size();
+        vector<vector<int>> res(n, vector<int> (m, 0));
+        vector<vector<int>> dir = {{0,1}, {0,-1}, {1,0}, {-1,0}};        
+        queue<vector<int>> q; // {i, j, cnt}
+        for(int i=0; i<n; i++) {
+            for(int j=0; j<m; j++) {
                 if(mat[i][j]==0) {
-                    q.push({i, j, 0}); vt[i][j]=1;
+                    q.push({i, j, 0});
                 }
-                else cnt++;
             }
         }
 
-        while(!q.empty() && cnt>0) {
-            vector<int> arr=q.front(); q.pop();
-            int i=arr[0], j=arr[1];
-
-            if(i+1<m && vt[i+1][j]==0 && mat[i+1][j]==1) {
-                cnt--; vt[i+1][j]=1;
-                res[i+1][j]=arr[2]+1;
-                q.push({i+1, j, arr[2]+1});
-            }
-            if(i-1>=0 && vt[i-1][j]==0 && mat[i-1][j]==1) {
-                cnt--; vt[i-1][j]=1;
-                res[i-1][j]=arr[2]+1;
-                q.push({i-1, j, arr[2]+1});
-            }
-            if(j+1<n && vt[i][j+1]==0 && mat[i][j+1]==1) {
-                cnt--; vt[i][j+1]=1;
-                res[i][j+1]=arr[2]+1;
-                q.push({i, j+1, arr[2]+1});
-            }
-            if(j-1>=0 && vt[i][j-1]==0 && mat[i][j-1]==1) {
-                cnt--; vt[i][j-1]=1;
-                res[i][j-1]=arr[2]+1;
-                q.push({i, j-1, arr[2]+1});
+        while(!q.empty()) {
+            auto a=q.front(); q.pop();
+            for(auto d : dir) {
+                int x=a[0]+d[0], y=a[1]+d[1];
+                if(x<0 || x>=n || y<0 || y>=m) continue;
+                if(mat[x][y]==-1) continue;                  
+                if(mat[x][y]==0) continue;             
+                if(mat[x][y]==1) {
+                    res[x][y]=a[2]+1; mat[x][y]=-1;
+                    q.push({x, y, a[2]+1});
+                }
             }
         }
 

@@ -1,0 +1,2 @@
+1. In traversal problems, if I am having adjacent matrix and I need to find number of connected components, then going with dfs is best option.
+2. For cycle dectection in directed graph, we will go for dfs with vis and path arrays.

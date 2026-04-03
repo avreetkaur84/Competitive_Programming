@@ -75,18 +75,13 @@ public:
             return a[2] < b[2]; 
         });
 
-        // for(int i=0; i<edges.size(); i++) {
-        //     cout<<edges[i][2]<<"  ";
-        // }
-        // cout<<"\n";
-
         // provide parent to each node
         vector<int> parent(V);
         vector<int> size(V);
         vector<vector<int>> res;
 
         // make_set operation
-        for (int i = 0; i < V; i++)
+        for(int i = 0; i < V; i++)
         {
             parent[i] = i;
             size[i] = 1;

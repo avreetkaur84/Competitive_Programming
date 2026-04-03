@@ -53,7 +53,7 @@ int tabulation(string text1, string text2) {
 // string storage 
 string findLCS(int n, int m,string &s1, string &s2){
 	// Write your code here.
-	vector<vector<string>> dp(n+1, vector<string> (m+1, ""))	;
+	vector<vector<string>> dp(n+1, vector<string> (m+1, ""));
 
 	for(int i=1; i<=n; i++) {
 		for(int j=1; j<=m; j++) {
